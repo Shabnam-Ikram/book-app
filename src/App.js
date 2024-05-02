@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import Books from './components/Books';
+import SingleBook from './components/SingleBook';
+import EditBook from './components/EditBook';
+import Login from './components/Login';
+import { fetchBooks } from './store/bookSlice';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooks()); // Dispatch action to fetch books
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<Books />} />
+        <Route path="/books/:id" element={<SingleBook />} />
+        <Route path="/books/:id/edit" element={<EditBook />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<h3>Page Not Found</h3>} />
+      </Routes>
     </div>
   );
 }
