@@ -32,6 +32,8 @@ const Login = () => {
     } catch (error) {
       alert('try with correct Username and Password', error);
       // Handle login error, such as displaying an error message to the user
+      setUsername = '';
+      setPassword = '';
     }
   };
 
