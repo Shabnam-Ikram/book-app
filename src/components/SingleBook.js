@@ -57,7 +57,7 @@ const SingleBook = () => {
       }}
     >
       {book ? (
-        <Card variant="outlined" sx={{ maxWidth: 600, backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: 4, padding: '20px' }}>
+        <Card variant="outlined" sx={{ maxWidth: 600, backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: 4, paddingLeft: '20px', paddingRight: '20px' }}>
           <CardContent>
             <Typography variant="h4" gutterBottom>
               {book.title}
