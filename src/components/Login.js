@@ -30,7 +30,7 @@ const Login = () => {
       // Redirect to the home page after successful login
       navigate('/');
     } catch (error) {
-      console.error('Login failed:', error);
+      alert('try with correct Username and Password', error);
       // Handle login error, such as displaying an error message to the user
     }
   };
