@@ -15,7 +15,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('https://reqres.in/api/users', {
+      const response = await axios.post('https://reqres.in/api/login', {
         email: username,
         password: password,
       });
